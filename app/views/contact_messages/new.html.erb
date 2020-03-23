@@ -1,0 +1,18 @@
+<% provide(:title, "Contact") %>
+
+<div class="center jumbotron">
+    <h1>Contact</h1>
+    <p><strong>Todd O'Neill</strong><br>
+        Phone: (504) 644-1662<br>
+        Or Send an Email:
+    </p>
+    <%= form_tag  do %>
+        <label>Your Email:</label><br>
+        <%= text_field_tag :'contact[:email]'%><br>
+
+        <label>Message:</label><br>
+        <%= text_area_tag :'contact[:body]'%><br>
+
+        <%= submit_tag "Send Message" %>
+    <% end %>
+</div>
