@@ -5,10 +5,13 @@ class ContactMessagesController < ApplicationController
 
     def create
         @contact_message = ContactMessage.new(post_params)
-        @contact_message.save
-        binding.pry
-        CustomerMailer.with(contact_message: @contact_message).email_received.deliver_now
-        redirect_to root_path
+
+        if @contact_message.save
+            CustomerMailer.with(contact_message: @contact_message).email_received.deliver_later
+            redirect_to root_path
+        else
+            render :new
+        end
     end
 
     private

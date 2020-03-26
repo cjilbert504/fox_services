@@ -1,5 +1,4 @@
 class CustomerMailer < ApplicationMailer
-    # default from: 'fox@foxservices.com'
 
     def email_received
         @contact_message = params[:contact_message]
