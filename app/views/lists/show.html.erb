@@ -2,12 +2,11 @@
 
     <h3><%= @list.name.titlecase %></h3><br>
 
-        <ol>
             <% @list.tasks.each do |t| %>
-                <li><%= t.title %></li>
+                <%= t.title.titlecase %> - <%= t.content.capitalize %><br>
             <% end %>
-        </ol>
 </div>
+
 <div class="center jumbotron">
     <%= form_for :task, url: tasks_path do |f| %>
 
@@ -26,6 +25,6 @@
         <%= f.submit %>
 
     <% end %>
-    </div>
+</div>
 
 
