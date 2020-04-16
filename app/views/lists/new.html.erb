@@ -1,0 +1,16 @@
+<div class="center jumbotron">
+
+<h3>Create A New Daily Task List Here:</h3>
+    
+    <%= form_for(@list) do |f| %>
+
+        <%= f.label :name, "Task List Name:" %>
+        <%= f.text_field :name %>
+
+        <br>
+
+        <%= f.submit %>
+
+    <% end %>
+
+</div>
