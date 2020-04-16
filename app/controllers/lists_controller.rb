@@ -6,7 +6,6 @@ class ListsController < ApplicationController
 
     def show 
         @list = List.find_by(id: params[:id])
-        @list.tasks.build
     end
 
     def new 
