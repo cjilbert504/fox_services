@@ -36,7 +36,7 @@ class ListsController < ApplicationController
         @list = List.find_by(id: params[:id])
         @list.destroy
 
-        redirect_to root_path
+        redirect_to new_list_path
     end
 
     private 
