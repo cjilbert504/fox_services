@@ -1,5 +1,9 @@
 <div class="center jumbotron">
 
+<% if !!flash[:alert] %>
+    <%= flash[:alert] %>
+<% end %>
+
 <h3>Create A New Daily Task List Here:</h3>
     
     <%= render "form" %>

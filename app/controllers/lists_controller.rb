@@ -6,6 +6,10 @@ class ListsController < ApplicationController
 
     def show 
         @list = List.find_by(id: params[:id])
+        if !@list
+            flash[:alert] = "List not found! Please make a new list."
+            redirect_to new_list_path unless @list
+        end
     end
 
     def new 
