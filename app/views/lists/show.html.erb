@@ -6,9 +6,10 @@
     <br>
 
     <h3><%= @list.name.titlecase %></h3><br>
-
+        <hr>
             <% @list.tasks.each do |t| %>
-                <%= t.title %> - <%= t.content %> <%= link_to "View Task Details", list_task_path(@list, t) %><br>
+                <%= t.title %> - <%= t.content %> - <%= link_to "View Task Details", list_task_path(@list, t) %><br>
+                <hr>
             <% end %>
 </div>
 
