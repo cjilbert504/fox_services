@@ -8,7 +8,7 @@
     <h3><%= @list.name.titlecase %></h3><br>
 
             <% @list.tasks.each do |t| %>
-                <%= t.title %> - <%= t.content.capitalize %><br>
+                <%= t.title %> - <%= t.content %><br>
             <% end %>
 </div>
 
