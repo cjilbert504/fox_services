@@ -1,5 +1,9 @@
 <div class="center jumbotron">
+
     <strong><%= @task.title %></strong>
     <br><hr>
     <strong>Details:</strong> <%= @task.content %>
+    <br><br>
+    <%= link_to "Back", list_path(@task.list) %>
+
 </div>
