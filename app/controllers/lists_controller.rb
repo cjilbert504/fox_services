@@ -5,7 +5,7 @@ class ListsController < ApplicationController
     end
 
     def show 
-        @list = List.find_by(id: params[:id])
+        find_list 
         if !@list
             flash[:alert] = "List not found! Please make a new list."
             redirect_to new_list_path unless @list
@@ -17,7 +17,7 @@ class ListsController < ApplicationController
     end
 
     def edit 
-        @list = List.find_by(id: params[:id])
+        find_list 
     end
 
     def create 
@@ -27,7 +27,7 @@ class ListsController < ApplicationController
     end
 
     def update 
-        @list = List.find_by(id: params[:id])
+        find_list 
 
         if @list.update(list_params)
             redirect_to list_path(@list)
@@ -37,7 +37,7 @@ class ListsController < ApplicationController
     end
 
     def destroy 
-        @list = List.find_by(id: params[:id])
+        find_list 
         @list.destroy
 
         redirect_to new_list_path
@@ -47,5 +47,9 @@ class ListsController < ApplicationController
 
     def list_params 
         params.require(:list).permit(:name)
+    end
+
+    def find_list 
+        @list = List.find_by(id: params[:id])
     end
 end
