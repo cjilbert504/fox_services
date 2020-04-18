@@ -3,7 +3,7 @@
     <% @list.each do |list| %>
 
     <div>
-        <%= link_to list.name, list_path(list), style: 'color:Black; padding: 14px 25px; border: 2px solid black; border-radius: 5px;' %>
+        <%= link_to list.name, list_path(list),:method => "get", id: "list_index", style: "width: 120px;" %>
     </div>
     <hr>
     <% end %>
