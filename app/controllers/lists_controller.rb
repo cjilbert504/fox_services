@@ -6,10 +6,8 @@ class ListsController < ApplicationController
 
     def show 
         find_list 
-        if !@list
-            flash[:alert] = "List not found! Please make a new list."
-            redirect_to new_list_path unless @list
-        end
+        flash[:alert] = "List not found! Please make a new list."
+        redirect_to new_list_path unless @list
     end
 
     def new 
