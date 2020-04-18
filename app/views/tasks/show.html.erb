@@ -1,6 +1,11 @@
 <div class="center jumbotron">
 
-    <strong><%= @task.title %></strong>
+    <%= link_to "Edit This Task", edit_task_path(@task) %> | <%= link_to "Delete This Task", task_path(@task), method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+
+    <br>
+
+    <h3><%= @task.title %></h3>
     <br><hr>
     <strong>Details:</strong> <%= @task.content %>
     <br><br>
