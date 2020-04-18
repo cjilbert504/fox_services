@@ -16,12 +16,19 @@ class TasksController < ApplicationController
 
     def update 
         find_task
-        
+
         if @task.update(task_params)
             redirect_to list_path(@task.list)
         else
             render 'edit'
         end
+    end
+
+    def destroy 
+        find_task
+        list = @task.list
+        @task.destroy
+        redirect_to list_path(list)
     end
 
     private 
