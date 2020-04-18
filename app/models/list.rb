@@ -4,6 +4,8 @@ class List < ApplicationRecord
 
   before_validation :normalize_name, on: [:create, :update]
   
+  validates :name, presence: true
+
   private 
 
   def normalize_name
