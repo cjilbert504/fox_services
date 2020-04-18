@@ -1,7 +1,19 @@
+<% if @list.errors.any? %>
+  <div id="error_explanation">
+    <%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:
+ 
+        <% @list.errors.full_messages.each do |msg| %>
+                <%= msg %><br>
+        <% end %>
+  </div>
+<% end %>
+
+<br>
+
 <%= form_for(@list) do |f| %>
 
-        <%= f.label :name, "Task List Name:" %>
-        <%= f.text_field :name %>
+       <%= f.label :name, "Task List Name:" %><br>
+        <%= f.text_field :name %><br>
 
         <br>
 
