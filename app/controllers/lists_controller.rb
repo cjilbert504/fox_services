@@ -41,7 +41,7 @@ class ListsController < ApplicationController
         find_list 
         @list.destroy
 
-        redirect_to new_list_path
+        redirect_to lists_path
     end
 
     private 
