@@ -8,7 +8,11 @@
     <h3><%= @list.name.titlecase %></h3><br>
         <hr>
             <% @list.tasks.each do |t| %>
-                <%= t.title %> - <%= t.content %> - <%= link_to "View Task Details", list_task_path(@list, t) %><br>
+                <% if t.completed == false %>
+                    <li style="color:red;"><%= t.title %> - <%= t.content %> - <%= link_to "View Task Details", list_task_path(@list, t) %></li><br>
+                <% else t.completed == true %>
+                    <li style="color:red;"><%= t.title %> - <%= t.content %> - <%= link_to "View Task Details", list_task_path(@list, t) %></li><br>
+                <% end %>
                 <hr>
             <% end %>
 </div>
@@ -18,6 +22,8 @@
     <%= form_for :task, url: list_tasks_path(@list) do |f| %>
 
         <%= f.hidden_field :list_id, value: @list.id %>
+
+        <%= f.hidden_field :completed, value: "false" %>
 
         <%= f.label :title, "Enter A Title For This Task:" %><br>
         <%= f.text_field :title %>
