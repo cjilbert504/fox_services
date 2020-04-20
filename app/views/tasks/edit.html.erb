@@ -29,6 +29,11 @@
 
     <br><br>
 
+    <%= f.label :list_id, "Move Task To A Different List:" %><br>
+    <%= f.collection_select :list_id, List.all, :id, :name %>
+
+    <br><br>
+
     <%= f.submit %>
 
 <% end %>
