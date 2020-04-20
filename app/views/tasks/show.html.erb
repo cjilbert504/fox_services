@@ -6,6 +6,12 @@
     <br>
 
     <h3><%= @task.title %></h3>
+    <strong>Task Status: </strong>
+    <% if @task.completed == false %>
+        Incomplete
+    <% else %>
+        Completed
+    <% end %>
     <br><hr>
     <strong>Details:</strong> <%= @task.content %>
     <br><br>
