@@ -43,3 +43,15 @@
 * associations
     - has_many :tasks
     - has_many :lists, through: :tasks
+---
+---
+# Next To Do's
+* Tasks
+    - ability to mark tasks complete and able to change back to incomplete
+    - ability to move task to a different list?
+    - think about all attributes that tasks may need i.e. date, time, location and how to implement these (drop dowmn menus for date and time?, map for location?)
+    - add validations so that no attributes can be blank
+    
+    
+
+    
