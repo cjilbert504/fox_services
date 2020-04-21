@@ -15,7 +15,6 @@
                     <li style="color:green;"><%= t.title %> - <%= link_to "View Task Details", list_task_path(@list, t) %></li><br>
                 <% end %>
                 
-                <hr>
             <% end %>
 </div>
 
@@ -28,8 +27,6 @@
     <%= form_for :task, url: list_tasks_path(@list) do |f| %>
 
         <%= f.hidden_field :list_id, value: @list.id %>
-
-        <%= f.hidden_field :completed, value: "false" %>
 
         <%= f.label :title, "Enter A Title For This Task:" %><br>
         <%= f.text_field :title %>
