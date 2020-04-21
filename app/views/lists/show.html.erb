@@ -21,6 +21,10 @@
 
 <div class="center jumbotron">
 
+    <h3>Add A New Task To This List:</h3>
+
+    <br>
+
     <%= form_for :task, url: list_tasks_path(@list) do |f| %>
 
         <%= f.hidden_field :list_id, value: @list.id %>
@@ -29,6 +33,11 @@
 
         <%= f.label :title, "Enter A Title For This Task:" %><br>
         <%= f.text_field :title %>
+
+        <br><br>
+
+        <%= f.label :address, "Enter An Address For This Task:" %><br>
+        <%= f.text_field :address %>
 
         <br><br>
 

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_20_174754) do
+ActiveRecord::Schema.define(version: 2020_04_21_183628) do
 
   create_table "contact_messages", force: :cascade do |t|
     t.string "name"
@@ -33,6 +33,7 @@ ActiveRecord::Schema.define(version: 2020_04_20_174754) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "completed"
+    t.string "address"
     t.index ["list_id"], name: "index_tasks_on_list_id"
   end
 
