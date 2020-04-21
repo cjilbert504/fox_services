@@ -27,7 +27,6 @@
     - title
     - content
     - address
-    - contact info
 
 * associations
     - belongs_to :owner
