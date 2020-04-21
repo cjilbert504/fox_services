@@ -7,7 +7,7 @@
     <% @list.each do |list| %>
 
     <div>
-        <%= link_to list.normalize_name, list_path(list),:method => "get", id: "list_index", style: "width: 120px;" %>
+        <%= link_to list.normalize_name, list_path(list) %>
     </div>
     <hr>
     <% end %>
