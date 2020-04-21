@@ -8,6 +8,12 @@
   </div>
 <% end %>
 
+<div style="color:red;">
+    <% if !!flash[:alert] %>
+        <%= flash[:alert] %>
+    <% end %>
+</div>
+
 <br>
 
 <%= form_for(@list) do |f| %>

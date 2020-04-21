@@ -3,7 +3,7 @@ class Task < ApplicationRecord
 
   before_validation :normalize_title, :normalize_content, :normalize_address, on: [:create, :update]
   
-  validates :title, :address, :content, presence: :true
+  validates :title, :address, :content, presence: true
 
   private 
 
