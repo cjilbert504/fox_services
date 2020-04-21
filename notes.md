@@ -48,7 +48,6 @@
 ---
 # Next To Do's
 * Tasks
-    - add validations so that no attributes can be blank
     - handle errors for failed validations
     
     
