@@ -30,7 +30,7 @@
     <br><br>
 
     <%= f.label :list_id, "Move Task To A Different List:" %><br>
-    <%= f.collection_select :list_id, List.all, :id, :name %>
+    <%= f.collection_select :list_id, List.all, :id, :normalize_name %>
 
     <br><br>
 

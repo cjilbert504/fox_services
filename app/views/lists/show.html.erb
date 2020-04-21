@@ -5,7 +5,7 @@
 
     <br>
 
-    <h3><%= @list.name.titlecase %></h3><br>
+    <h3><%= @list.normalize_name %></h3><br>
         <hr>
             <% @list.tasks.each do |t| %>
 

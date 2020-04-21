@@ -14,7 +14,7 @@
 
 # List
 * attributes
-    - name
+    - name(date for name)
 
 * associations
     - belongs_to :owner
@@ -26,6 +26,8 @@
 * attributes
     - title
     - content
+    - address
+    - contact info
 
 * associations
     - belongs_to :owner

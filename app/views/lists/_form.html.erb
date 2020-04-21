@@ -13,7 +13,7 @@
 <%= form_for(@list) do |f| %>
 
        <%= f.label :name, "Task List Name:" %><br>
-        <%= f.text_field :name %><br>
+        <%= f.date_select :name, order: [:month, :day, :year] %><br>
 
         <br>
 
