@@ -52,6 +52,7 @@
 ---
 ---
 # General Planning Thoughts
+ - verify that both controllers are up to par with handling errors with current project status
  - Admins and users visit the same login page, but are redirected after successful login based upon being and admin or not
  - Admins go to a hidden url in order to sign up as an admin?
  - Users can signup via a visible sign up link in header?
