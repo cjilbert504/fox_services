@@ -18,11 +18,11 @@
 
 <%= form_for(@list) do |f| %>
 
-       <%= f.label :name, "Task List Name:" %><br>
-        <%= f.date_select :name, order: [:month, :day, :year] %><br>
+  <%= f.label :name, "Task List Name:" %><br>
+  <%= f.date_select :name, order: [:month, :day, :year] %><br>
 
-        <br>
+  <br>
 
-        <%= f.submit %>
+  <%= f.submit %>
 
 <% end %>
