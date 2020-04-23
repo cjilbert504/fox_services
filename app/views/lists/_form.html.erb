@@ -1,18 +1,14 @@
 <% if @list.errors.any? %>
+
   <div id="error_explanation">
     <%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:
  
-        <% @list.errors.full_messages.each do |msg| %>
-                <%= msg %><br>
-        <% end %>
+      <% @list.errors.full_messages.each do |msg| %>
+        <%= msg %><br>
+      <% end %>
   </div>
-<% end %>
 
-<div style="color:red;">
-    <% if flash[:alert] %>
-        <%= flash[:alert] %>
-    <% end %>
-</div>
+<% end %>
 
 <br>
 

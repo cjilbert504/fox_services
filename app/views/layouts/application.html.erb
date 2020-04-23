@@ -16,11 +16,19 @@
     <%= render 'layouts/header' %>
 
     <div class="container">
+
       <div class="center jumbotron">
+
+        <div style="color:red;">
+          <% if flash[:alert] %>
+            <%= flash[:alert] %>
+          <% end %>
+        </div>
 
         <%= yield %>
 
       </div>
+      
     </div>
       
       <div class="container">
