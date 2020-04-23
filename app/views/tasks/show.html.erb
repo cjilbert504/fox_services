@@ -1,13 +1,11 @@
-<div class="center jumbotron">
-
-    <%= link_to "Edit This Task", edit_task_path(@task) %> | <%= link_to "Delete This Task", task_path(@task), method: :delete,
+<%= link_to "Edit This Task", edit_task_path(@task) %> | <%= link_to "Delete This Task", task_path(@task), method: :delete,
               data: { confirm: 'Are you sure?' } %>
 
-    <br>
+<br>
 
-    <h3><%= @task.title %></h3>
+<h3><%= @task.title %></h3>
 
-    <strong>Task Status: </strong>
+<strong>Task Status: </strong>
 
     <% if @task.completed == false %>
         Incomplete
@@ -15,13 +13,15 @@
         Completed
     <% end %>
 
-    <br>
+<br>
 
-    <strong>Task Address: </strong><%= @task.address %>
+<strong>Task Address: </strong><%= @task.address %>
     
-    <br><hr>
-    <strong>Details:</strong> <%= @task.content %>
-    <br><br>
-    <%= link_to "Back", list_path(@task.list) %>
+<br><hr>
 
-</div>
+<strong>Details:</strong> <%= @task.content %>
+
+<br><br>
+
+<%= link_to "Back", list_path(@task.list) %>
+

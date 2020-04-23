@@ -1,15 +1,14 @@
-<div class="center jumbotron">
+<h3>Fox Services Task Lists:</h3>
 
-    <h3>Fox Services Task Lists:</h3>
+<hr>
 
-    <hr>
-
-    <% @list.each do |list| %>
+<% @list.each do |list| %>
 
     <div>
         <%= link_to list.normalize_name, list_path(list) %>
     </div>
-    <hr>
-    <% end %>
+<hr>
 
-</div>
+<% end %>
+
+

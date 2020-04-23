@@ -6,7 +6,9 @@ class ListsController < ApplicationController
 
     def show 
         if !find_list 
-            redirect_to new_list_path, alert: "List not found! Please make a new list." unless @list
+            redirect_to new_list_path, alert: "List not found! Please make a new list."
+        else
+            render layout: "list_show"
         end
     end
 
