@@ -24,7 +24,7 @@
 
     <br>
 
-    <%= form_for :task, url: list_tasks_path(@list) do |f| %>
+    <%= form_for [@list, @task] do |f| %>
 
         <%= f.hidden_field :list_id, value: @list.id %>
 
