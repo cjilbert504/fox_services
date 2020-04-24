@@ -25,10 +25,8 @@ ActiveRecord::Schema.define(version: 2020_04_24_150900) do
     t.string "email"
     t.string "phone_number"
     t.string "password_digest"
-    t.integer "owner_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["owner_id"], name: "index_employees_on_owner_id"
   end
 
   create_table "lists", force: :cascade do |t|
@@ -48,6 +46,5 @@ ActiveRecord::Schema.define(version: 2020_04_24_150900) do
     t.index ["list_id"], name: "index_tasks_on_list_id"
   end
 
-  add_foreign_key "employees", "owners"
   add_foreign_key "tasks", "lists"
 end

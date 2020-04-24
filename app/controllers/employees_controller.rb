@@ -5,7 +5,7 @@ class EmployeesController < ApplicationController
     end
 
     def show 
-
+        @employee = Employee.find_by(id: params[:id])
     end
 
     def new 
@@ -17,10 +17,15 @@ class EmployeesController < ApplicationController
     end
 
     def create 
+        # binding.pry
         @employee = Employee.new(employee_params)
         if @employee.save
-            redirect_to employee_path(@employee)
+            session[:user_id] = @employee.id
+            redirect_to employee_path(@employee), notice: "Thank you for signing up!"
+        else
+            render 'new'
         end
+     
     end
 
     def update 
@@ -34,7 +39,7 @@ class EmployeesController < ApplicationController
     private 
 
     def employee_params 
-        params.require(:employee).require(:name, :email)
+        params.require(:employee).permit(:name, :email, :phone_number, :password, :password_confirmation)
     end
 
 end
