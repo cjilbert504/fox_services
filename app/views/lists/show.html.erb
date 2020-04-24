@@ -20,6 +20,12 @@
 
 <div class="center jumbotron" style="float: left;">
 
+    <div style="color:red;">
+          <% if flash[:alert] %>
+            <%= flash[:alert] %>
+          <% end %>
+    </div>
+
     <h3>Add A New Task To This List:</h3>
 
     <br>

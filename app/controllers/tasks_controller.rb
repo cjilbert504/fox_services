@@ -10,8 +10,11 @@ class TasksController < ApplicationController
 
     def create 
         @task = Task.new(task_params)
-        @task.save
-        redirect_to list_path(@task.list)
+        if @task.save
+            redirect_to list_path(@task.list)
+        else
+            redirect_to list_path(@task.list), alert: "All task fields must filled in!"
+        end
     end
 
     def update 
