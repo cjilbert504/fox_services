@@ -29,6 +29,7 @@ class TasksController < ApplicationController
 
     def destroy 
         find_task
+        
         list = @task.list
         @task.destroy
         redirect_to list_path(list)
