@@ -11,4 +11,6 @@ Rails.application.routes.draw do
 
   resources :tasks, only: [:edit, :update, :destroy]
 
+  resources :employees
+
 end
