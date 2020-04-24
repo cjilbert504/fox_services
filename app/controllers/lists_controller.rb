@@ -6,7 +6,6 @@ class ListsController < ApplicationController
 
     def show 
         if find_list 
-            @task = Task.new
             render layout: "list_show"
         else
             redirect_to new_list_path, alert: "List not found! Please make a new list."
