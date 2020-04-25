@@ -17,7 +17,6 @@ class EmployeesController < ApplicationController
     end
 
     def create 
-        # binding.pry
         @employee = Employee.new(employee_params)
         if @employee.save
             session[:user_id] = @employee.id
