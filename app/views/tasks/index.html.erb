@@ -20,6 +20,9 @@
 
 <div class="center jumbotron" style="float: left;">
 
+<%# Don't show this form if employee does not have admin permissions %>
+<%# Instead this container should have text that says something like here's your list of tasks (perhaps for today?i.e. current date) %>
+
     <div style="color:red;">
           <% if flash[:alert] %>
             <%= flash[:alert] %>
