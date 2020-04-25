@@ -11,7 +11,13 @@ Rails.application.routes.draw do
 
   resources :tasks, only: [:edit, :update, :destroy]
 
-  resources :employees
+  resources :employees do 
+    resources :tasks, only: [:index]
+  end
   resources :sessions, only: [:new, :create, :destroy]
 
 end
+
+
+# employee_tasks GET    /employees/:employee_id/tasks(.:format)                                                  tasks#index
+# list_tasks GET    /lists/:list_id/tasks(.:format)                                                          tasks#index
