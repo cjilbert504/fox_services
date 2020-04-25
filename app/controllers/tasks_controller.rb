@@ -1,5 +1,10 @@
 class TasksController < ApplicationController
 
+    def index 
+        @list = List.find_by(id: params[:list_id])
+        render layout: "list_show"
+    end
+
     def show
         find_task
     end
@@ -11,9 +16,9 @@ class TasksController < ApplicationController
     def create 
         @task = Task.new(task_params)
         if @task.save
-            redirect_to list_path(@task.list)
+            redirect_to list_tasks_path(@task.list)
         else
-            redirect_to list_path(@task.list), alert: "All task fields must filled in!"
+            redirect_to list_tasks_path(@task.list), alert: "All task fields must filled in!"
         end
     end
 
@@ -21,7 +26,7 @@ class TasksController < ApplicationController
         find_task
 
         if @task.update(task_params)
-            redirect_to list_path(@task.list)
+            redirect_to list_tasks_path(@task.list)
         else
             render 'edit'
         end
@@ -32,7 +37,7 @@ class TasksController < ApplicationController
         
         list = @task.list
         @task.destroy
-        redirect_to list_path(list)
+        redirect_to list_tasks_path(list)
     end
 
     private 

@@ -23,7 +23,7 @@ class ListsController < ApplicationController
     def create 
         @list = List.new(list_params)
         if @list.save
-            redirect_to list_path(@list)
+            redirect_to list_tasks_path(@list)
         else 
             render 'new'
         end
@@ -33,7 +33,7 @@ class ListsController < ApplicationController
         find_list 
 
         if @list.update(list_params)
-            redirect_to list_path(@list)
+            redirect_to list_tasks_path(@list)
         else
             render 'edit'
         end
