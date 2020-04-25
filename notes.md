@@ -48,15 +48,16 @@
 ---
 ---
 # Next To Do's
-* Build out employee model
+* build out ability to assign an employee to a task
+* only employees who have a given task assigned to them can mark as complete and/or incomplete
+* build log in functionality
 ---
 ---
 # General Planning Thoughts
- - Admins and users visit the same login page, but are redirected after successful login based upon being and admin or not
- - Admins go to a hidden url in order to sign up as an admin?
- - Users can signup via a visible sign up link in header?
- - Think about what routes need to be accessible to Admins only and placed within a namespaced route
- - May be able to have shared signup between both Admin and User models by having a secret admin password that can be entered at signup in order to gain Admin status if password entered matches the secret password
+ * Admins and users visit the same login page, but are redirected after successful login based upon being and admin or not
+ * Think about what routes need to be accessible to Admins only and placed within a namespaced route
+ * Lists can only be made by admins and should be assigned to that admin after being created
+
     
     
 
