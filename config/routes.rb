@@ -6,14 +6,14 @@ Rails.application.routes.draw do
   resources :contact_messages, only: [:new, :create]
 
   resources :lists do
-    resources :tasks, only: [:index, :show, :create]
+    resources :tasks, only: [:index, :show, :new]
   end
   
   resources :employees do 
     resources :tasks, only: [:index]
   end
 
-  resources :tasks, only: [:edit, :update, :destroy]
+  resources :tasks, only: [:edit, :create, :update, :destroy]
 
   resources :sessions, only: [:new, :create, :destroy]
 
