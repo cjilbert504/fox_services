@@ -1,6 +1,6 @@
-<div class="center jumbotron" style="float: right; width: 500px; height: 432px; overflow-x: hidden; overflow-x: auto; text-align:center;">
+<div class="center jumbotron" style="opacity: 0.95; float: right; width: 500px; height: 432px; overflow-x: hidden; overflow-x: auto; text-align:center;">
 
-    <%= link_to "View All Lists", lists_path %> | <%= link_to "Edit This List", edit_list_path(@list) %> | <%= link_to "Delete This List", list_path(@list), method: :delete,
+    <%= link_to "Add A Task To This List", new_list_task_path %> | <%= link_to "Edit This List", edit_list_path(@list) %> | <%= link_to "Delete This List", list_path(@list), method: :delete,
               data: { confirm: 'Are you sure?' } %>
 
     <br>
@@ -18,21 +18,3 @@
             <% end %>
 </div>
 
-<div class="center jumbotron" style="float: left;">
-
-<%# Don't show this form if employee does not have admin permissions %>
-<%# Instead this container should have text that says something like here's your list of tasks (perhaps for today?i.e. current date) %>
-
-    <div style="color:red;">
-          <% if flash[:alert] %>
-            <%= flash[:alert] %>
-          <% end %>
-    </div>
-
-    <h3>Add A New Task To This List:</h3>
-
-    <br>
-
-    <%= render "list_task_form" %>
-
-</div>
