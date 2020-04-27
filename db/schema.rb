@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_24_150900) do
+ActiveRecord::Schema.define(version: 2020_04_27_143134) do
 
   create_table "contact_messages", force: :cascade do |t|
     t.string "name"
@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2020_04_24_150900) do
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "completed", default: false
     t.string "address"
+    t.integer "employee_id"
     t.index ["list_id"], name: "index_tasks_on_list_id"
   end
 
