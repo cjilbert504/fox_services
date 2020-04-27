@@ -2,10 +2,10 @@
 <%= flash[:notice] %><br>
 <% end %>
 
-<h3>Welcome <%= @employee.name %>, To Your Dashboard</h3>
+<h3>Welcome <%= @employee.name %>, Here Are Your Tasks</h3>
 
 <% @employee.tasks.each do |t| %>
 
-    <%= link_to t.title, list_task_path(t.list, t) %>
-
+    <%= t.list.normalize_name %> - <%= link_to t.title, list_task_path(t.list, t) %><br>
+    
 <% end %>
