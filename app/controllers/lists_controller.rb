@@ -1,4 +1,4 @@
-class Admin::ListsController < ApplicationController
+class ListsController < ApplicationController
 
     def index 
         @list = List.all

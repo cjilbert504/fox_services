@@ -1,6 +1,6 @@
 <div class="center jumbotron" style="float: right; width: 500px; height: 432px; overflow-x: hidden; overflow-x: auto; text-align:center;">
 
-    <%= link_to "View All Lists", admin_lists_path %> | <%= link_to "Edit This List", edit_list_path(@list) %> | <%= link_to "Delete This List", list_path(@list), method: :delete,
+    <%= link_to "View All Lists", lists_path %> | <%= link_to "Edit This List", edit_list_path(@list) %> | <%= link_to "Delete This List", list_path(@list), method: :delete,
               data: { confirm: 'Are you sure?' } %>
 
     <br>

@@ -6,8 +6,8 @@
         <li><%= link_to "Log In", new_session_path %></li>
         <li><%= link_to "Log Out", session_path(:user_id), method: :delete %></li>
         <li><%= link_to "Sign Up", new_employee_path %></li>
-        <li><%= link_to "Task Lists", admin_lists_path %></li>
-        <li><%= link_to "New Task List", new_admin_list_path %></li>
+        <li><%= link_to "Task Lists", lists_path %></li>
+        <li><%= link_to "New Task List", new_list_path %></li>
         <li><%= link_to "About", about_path %></li>
         <li><%= link_to "Contact", new_contact_message_path %></li>
         <li><%= link_to "Help", help_path %></li>

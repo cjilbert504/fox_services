@@ -12,7 +12,7 @@
 
 <br>
 
-<%= form_for @list, :url => {:controller => 'admin/lists', :action => 'create'} do |f| %>
+<%= form_for(@list) do |f| %>
 
   <%= f.label :name, "Task List Name:" %><br>
   <%= f.date_select :name, order: [:month, :day, :year] %><br>

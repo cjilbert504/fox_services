@@ -5,10 +5,6 @@ Rails.application.routes.draw do
 
   resources :contact_messages, only: [:new, :create]
 
-  namespace :admin do 
-    resources :lists
-  end
-
   resources :lists do
     resources :tasks, only: [:index, :show, :create]
   end
