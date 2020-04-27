@@ -16,6 +16,15 @@
 <br>
 
 <strong>Task Address: </strong><%= @task.address %>
+
+<br>
+
+<% if @task.employee != nil %>
+    <strong>Assigned To: </strong><%= @task.employee.name %>
+<% else %>
+    <strong style="color: red;">Task Is Not Assigned! </strong>
+<% end %>
+
     
 <br><hr>
 
