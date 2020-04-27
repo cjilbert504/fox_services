@@ -9,6 +9,10 @@ class TasksController < ApplicationController
         find_task
     end
 
+    def new 
+        @task = Task.new(list_id: params[:list_id])
+    end
+
     def edit 
         find_task
     end
@@ -18,7 +22,7 @@ class TasksController < ApplicationController
         if @task.save
             redirect_to list_tasks_path(@task.list)
         else
-            redirect_to list_tasks_path(@task.list), alert: "All task fields must filled in!"
+            render 'new'
         end
     end
 
