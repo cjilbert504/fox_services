@@ -37,6 +37,11 @@
 
     <br><br>
 
+    <%= f.label :employee_id, "Assign This Task To An Employee:" %><br>
+    <%= f.collection_select :employee_id, Employee.all, :id, :name, {:prompt => "Select Employee"} %>
+
+    <br><br>
+
     <%= f.submit %>
 
 <% end %>
