@@ -1,6 +1,6 @@
 <% if @task.errors.any? %>
   <div id="error_explanation">
-    <%= pluralize(@task.errors.count, "error") %> prohibited this task from being updated:
+    <%= pluralize(@task.errors.count, "error") %> prohibited this task from being updated:<br>
  
         <% @task.errors.full_messages.each do |msg| %>
                 <%= msg %><br>
@@ -12,17 +12,19 @@
 
 <%= form_for(@task) do |f| %>
 
-    <%= f.label :title, "Edit The Title For This Task:" %><br>
+  <%= f.hidden_field :list_id, value: @task.list %>
+
+    <%= f.label :title, "Enter The Title For This Task:" %><br>
     <%= f.text_field :title %>
 
     <br><br>
 
-    <%= f.label :address, "Edit The Address For This Task:" %><br>
+    <%= f.label :address, "Enter The Address For This Task:" %><br>
     <%= f.text_field :address %>
 
     <br><br>
 
-    <%= f.label :content, "Edit The Details For This Task:" %><br>
+    <%= f.label :content, "Enter The Details For This Task:" %><br>
     <%= f.text_area :content, size: "50x3" %>
 
     <br><br>
