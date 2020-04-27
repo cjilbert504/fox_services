@@ -3,6 +3,7 @@
   <%= link_to "Fox Services", root_path, id: "logo" %>
     <nav>
       <ul class="nav navbar-nav navbar-right">
+        <li><%= link_to "Log In", new_session_path %></li>
         <li><%= link_to "Log Out", session_path(:user_id), method: :delete %></li>
         <li><%= link_to "Sign Up", new_employee_path %></li>
         <li><%= link_to "Task Lists", lists_path %></li>
