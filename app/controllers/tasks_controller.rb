@@ -24,7 +24,7 @@ class TasksController < ApplicationController
 
     def update 
         find_task
-
+        
         if @task.update(task_params)
             redirect_to list_tasks_path(@task.list)
         else
@@ -43,7 +43,7 @@ class TasksController < ApplicationController
     private 
 
     def task_params 
-        params.require(:task).permit(:title, :content, :list_id, :completed, :address)
+        params.require(:task).permit(:title, :content, :list_id, :completed, :address, :employee_id)
     end
 
     def find_task 
