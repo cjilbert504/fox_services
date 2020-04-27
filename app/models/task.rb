@@ -1,5 +1,6 @@
 class Task < ApplicationRecord
   belongs_to :list
+  belongs_to :employee, optional: true
 
   before_validation :normalize_title, :normalize_content, :normalize_address, on: [:create, :update]
   
