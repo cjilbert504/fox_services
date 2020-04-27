@@ -48,7 +48,6 @@
 ---
 ---
 # Next To Do's
-* build out ability to assign an employee to a task
 * only employees who have a given task assigned to them can mark as complete and/or incomplete
 * build log in functionality
 ---
