@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
             session[:user_id] = employee.id
             redirect_to employee_path(employee)
         else
-            render 'new', alert: "User not found. Please try again."
+            redirect_to new_session_path, alert: "User not found. Please try again."
         end
     end
 
