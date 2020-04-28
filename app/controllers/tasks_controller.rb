@@ -1,6 +1,7 @@
 class TasksController < ApplicationController
 
     def index 
+        # add ability to function as normal if no list id is passed in
         @list = List.find_by(id: params[:list_id])
         render layout: "list_show"
     end
@@ -10,7 +11,10 @@ class TasksController < ApplicationController
     end
 
     def new 
-        @task = Task.new(list_id: params[:list_id])
+        #add some conditional logic here to handle list not found
+        list = List.find_by(id: params[:list_id])
+        @task = list.tasks.build
+        # @task = Task.new(list_id: params[:list_id])
     end
 
     def edit 
