@@ -45,13 +45,12 @@
 ---
 ---
 # Next To Do's
-* build out and utilize nested new route for tasks under lists
+* build out ability to associate a list to belong to the person whom created it (maybe using current_user helper?)
 * only employees who have a given task assigned to them can mark as complete and/or incomplete
 ---
 ---
 # General Planning Thoughts
- * Admins and users visit the same login page, but are redirected after successful login based upon being and admin or not
- * Lists can only be made by admins and should be assigned to that admin after being created
+
  ---
  ---
  # Requirements
