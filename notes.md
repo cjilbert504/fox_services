@@ -1,4 +1,4 @@
-# Owner
+<!-- # Owner
 * attributes
     
     - name
@@ -9,7 +9,7 @@
 * associations
     - has_many :lists
     - has_many :tasks
-    - has_many :employees, through: tasks
+    - has_many :employees, through: tasks -->
 
 
 # List
