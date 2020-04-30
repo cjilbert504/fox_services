@@ -14,36 +14,36 @@
 
   <%= f.hidden_field :list_id, value: @task.list %>
 
-    <%= f.label :title, "Enter The Title For This Task:" %><br>
-    <%= f.text_field :title %>
+  <%= f.label :title, "Enter The Title For This Task:" %><br>
+  <%= f.text_field :title %>
 
-    <br><br>
+  <br><br>
 
-    <%= f.label :address, "Enter The Address For This Task:" %><br>
-    <%= f.text_field :address %>
+  <%= f.label :address, "Enter The Address For This Task:" %><br>
+  <%= f.text_field :address %>
 
-    <br><br>
+  <br><br>
 
-    <%= f.label :content, "Enter The Details For This Task:" %><br>
-    <%= f.text_area :content, size: "50x3" %>
+  <%= f.label :content, "Enter The Details For This Task:" %><br>
+  <%= f.text_area :content, size: "50x3" %>
 
-    <br><br>
+  <br><br>
 
-    <%= f.label :completed, "Mark As Completed or Incomplete:" %><br>
-    <%= f.select(:completed, [["Completed", true], ["Incomplete", false]]) %>
+  <%= f.label :completed, "Mark As Completed or Incomplete:" %><br>
+  <%= f.select(:completed, [["Completed", true], ["Incomplete", false]]) %>
 
-    <br><br>
+  <br><br>
 
-    <%= f.label :list_id, "Move Task To A Different List:" %><br>
-    <%= f.collection_select :list_id, List.all, :id, :normalize_name %>
+  <%= f.label :list_id, "Move Task To A Different List:" %><br>
+  <%= f.collection_select :list_id, List.all, :id, :normalize_name %>
 
-    <br><br>
+  <br><br>
 
-    <%= f.label :employee_id, "Assign This Task To An Employee:" %><br>
-    <%= f.collection_select :employee_id, Employee.all, :id, :name, {:prompt => "Select Employee"} %>
+  <%= f.label :employee_id, "Assign This Task To An Employee:" %><br>
+  <%= f.collection_select :employee_id, Employee.all, :id, :name, {:prompt => "Select Employee"} %>
 
-    <br><br>
+  <br><br>
 
-    <%= f.submit %>
+  <%= f.submit %>
 
 <% end %>
