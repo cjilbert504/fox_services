@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+    before_action :find_task, only: [:show, :edit, :update, :destroy]
 
     def index 
         # add ability to function as normal if no list id is passed in
@@ -7,7 +8,6 @@ class TasksController < ApplicationController
     end
 
     def show
-        find_task
     end
 
     def new 
@@ -18,7 +18,6 @@ class TasksController < ApplicationController
     end
 
     def edit 
-        find_task
     end
 
     def create 
@@ -31,8 +30,6 @@ class TasksController < ApplicationController
     end
 
     def update 
-        find_task
-        
         if @task.update(task_params)
             redirect_to list_tasks_path(@task.list)
         else
@@ -41,8 +38,6 @@ class TasksController < ApplicationController
     end
 
     def destroy 
-        find_task
-        
         list = @task.list
         @task.destroy
         redirect_to list_tasks_path(list)
