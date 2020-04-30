@@ -14,10 +14,12 @@ class TasksController < ApplicationController
     end
 
     def new 
-        #add some conditional logic here to handle list not found
         list = List.find_by(id: params[:list_id])
-        @task = list.tasks.build
-        # @task = Task.new(list_id: params[:list_id])
+        if list
+            @task = list.tasks.build
+        else
+            redirect_to lists_path, alert: "List not found!"
+        end
     end
 
     def edit 
