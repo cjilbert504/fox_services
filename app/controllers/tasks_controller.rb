@@ -3,8 +3,12 @@ class TasksController < ApplicationController
 
     def index 
         # add ability to function as normal if no list id is passed in
-        @list = List.find_by(id: params[:list_id])
-        render layout: "list_show"
+        if params[:list_id].present?
+            @list = List.find_by(id: params[:list_id])
+            render layout: "list_show"
+        else
+            @tasks = Task.order(:list_id)
+        end
     end
 
     def show
