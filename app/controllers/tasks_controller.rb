@@ -2,7 +2,6 @@ class TasksController < ApplicationController
     before_action :find_task, only: [:show, :edit, :update, :destroy]
 
     def index 
-        # add ability to function as normal if no list id is passed in
         if params[:list_id].present?
             @list = List.find_by(id: params[:list_id])
             render layout: "list_show"
