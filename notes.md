@@ -45,8 +45,16 @@
 ---
 ---
 # Next To Do's
-* build out ability to associate a list to belong to the person whom created it (maybe using current_user helper?)
-* only employees who have a given task assigned to them can mark as complete and/or incomplete
+* add admin boolean to employee?
+* display who the list was created by?
+* ability to search for tasks created by a certain user or a way to sort all tasks by list id
+* only employees with admin permissions can make a list
+* only admins and employees who have a given task assigned to them can edit the task attributes
+* add helpers for logged_in?
+* incorporate logged_in? into before actions for controllers
+* check all validations on EVERYTHING
+* refactor views with helpers and partials if appropriate
+* OMNIAUTH!!!
 ---
 ---
 # General Planning Thoughts
