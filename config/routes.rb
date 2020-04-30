@@ -13,7 +13,7 @@ Rails.application.routes.draw do
     resources :tasks, only: [:index]
   end
 
-  resources :tasks, only: [:edit, :create, :update, :destroy]
+  resources :tasks, only: [:index, :edit, :create, :update, :destroy]
 
   resources :sessions, only: [:new, :create, :destroy]
 
