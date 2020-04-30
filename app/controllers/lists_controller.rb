@@ -1,13 +1,12 @@
 class ListsController < ApplicationController
+    before_action :find_list, only: [:edit, :update, :destroy]
 
     def index 
         @list = List.all
     end
 
     def show 
-        if find_list 
-            render layout: "list_show"
-        else
+        if !find_list
             redirect_to new_list_path, alert: "List not found! Please make a new list."
         end
     end
@@ -17,7 +16,6 @@ class ListsController < ApplicationController
     end
 
     def edit 
-        find_list 
     end
 
     def create 
@@ -30,8 +28,6 @@ class ListsController < ApplicationController
     end
 
     def update 
-        find_list 
-
         if @list.update(list_params)
             redirect_to list_tasks_path(@list)
         else
@@ -40,8 +36,6 @@ class ListsController < ApplicationController
     end
 
     def destroy 
-        find_list
-         
         @list.destroy
         redirect_to lists_path
     end
