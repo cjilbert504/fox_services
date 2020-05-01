@@ -5,7 +5,7 @@ class TasksController < ApplicationController
     def index 
         if params[:list_id].present?
             @list = List.find_by(id: params[:list_id])
-            render layout: "list_show"
+            render layout: "list_tasks"
         else
             @tasks = Task.order(:list_id)
         end
