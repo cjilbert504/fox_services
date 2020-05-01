@@ -45,8 +45,6 @@
 ---
 ---
 # Next To Do's
-* add admin boolean to employee?
-* only admins can make other employees admins
 * display who the list was created by?
 * ability to search for tasks created by a certain user or a way to sort all tasks by list id
 * only employees with admin permissions can make a list
