@@ -1,5 +1,6 @@
 class TasksController < ApplicationController
-    before_action :find_task, only: [:show, :edit, :update, :destroy]
+    before_action :find_task, only: [:show, :update, :destroy]
+    before_action :can_edit_or_complete, only: :edit
 
     def index 
         if params[:list_id].present?
@@ -56,5 +57,14 @@ class TasksController < ApplicationController
 
     def find_task 
         redirect_to lists_path, alert: "Task not found!" unless @task = Task.find_by(id: params[:id])
+    end
+
+    def can_edit_or_complete
+        find_task
+        if helpers.current_user.name == @task.list.created_by || helpers.current_user == @task.employee
+            @task
+        else
+            redirect_to list_tasks_path(@task.list), alert: "You do not have the permissions to edit this task"
+        end
     end
 end
