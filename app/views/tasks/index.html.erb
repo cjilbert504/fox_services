@@ -8,6 +8,7 @@
     <br>
 
     <h3><%= @list.normalize_name %></h3><br>
+        This list was created by: <%= @list.created_by %>
         <hr>
             <% @list.tasks.each do |t| %>
 
