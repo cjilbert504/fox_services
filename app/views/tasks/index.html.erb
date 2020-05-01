@@ -1,7 +1,5 @@
 <% if @list %>
 
-<div class="center jumbotron" style="opacity: 0.95; float: right; width: 500px; height: 432px; overflow-x: hidden; overflow-x: auto; text-align:center;">
-
     <%= link_to "Add A Task To This List", new_list_task_path %> | <%= link_to "Edit This List", edit_list_path(@list) %> | <%= link_to "Delete This List", list_path(@list), method: :delete,
               data: { confirm: 'Are you sure?' } %>
 
@@ -19,11 +17,9 @@
                 <% end %>
                 
             <% end %>
-</div>
-
+ 
 <% else %>
 
-    <div class="center jumbotron">
         <% @tasks.each do |t| %>
 
             <% if t.completed == false %>
@@ -33,7 +29,6 @@
             <% end %>
                 
         <% end %>
-    </div>
 
 <% end %>
 
