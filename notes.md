@@ -45,10 +45,9 @@
 ---
 ---
 # Next To Do's
-* display who the list was created by?
 * ability to search for tasks created by a certain user or a way to sort all tasks by list id
-* only employees with admin permissions can make a list
-* only admins and employees who have a given task assigned to them can edit the task attributes
+* only employees who created the list can edit the tasks attributes
+* employees assigned to a certain task can mark it complete
 * add helpers for logged_in?
 * incorporate logged_in? into before actions for controllers
 * check all validations on EVERYTHING
