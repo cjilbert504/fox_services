@@ -55,6 +55,6 @@ class TasksController < ApplicationController
     end
 
     def find_task 
-        @task = Task.find_by(id: params[:id])
+        redirect_to lists_path, alert: "Task not found!" unless @task = Task.find_by(id: params[:id])
     end
 end
