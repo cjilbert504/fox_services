@@ -27,12 +27,12 @@
         <% @tasks.each do |t| %>
 
             <% if t.completed == false %>
-                    <li style="color:red;"><%= t.list.normalize_name %> - <%= t.title %> - <%= link_to "View Task Details", list_task_path(t.list, t) %></li><br>
-                <% else t.completed == true %>
-                    <li style="color:green;"><%= t.list.normalize_name %> - <%= t.title %> - <%= link_to "View Task Details", list_task_path(t.list, t) %></li><br>
-                <% end %>
-                
+                <li style="color:red;"><%= t.list.normalize_name %> - <%= t.title %> - <%= link_to "View Task Details", list_task_path(t.list, t) %></li><br>
+            <% else t.completed == true %>
+                <li style="color:green;"><%= t.list.normalize_name %> - <%= t.title %> - <%= link_to "View Task Details", list_task_path(t.list, t) %></li><br>
             <% end %>
+                
+        <% end %>
     </div>
 
 <% end %>
