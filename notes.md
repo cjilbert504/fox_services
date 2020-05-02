@@ -45,6 +45,7 @@
 ---
 ---
 # Next To Do's
+* limit links in nav bar based upon user being logged in or not
 * in tasks index action re-write to use where method (i.e. @tasls = Task.where(list_id: params[:list_id]))
 * make seeds
 * ability to search for tasks created by a certain user or a way to sort all tasks by list id
