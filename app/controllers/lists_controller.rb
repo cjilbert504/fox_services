@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+    before_action :logged_in?
     before_action :find_list, only: [:edit, :update, :destroy]
 
     def index 
@@ -48,5 +49,9 @@ class ListsController < ApplicationController
 
     def find_list 
         @list = List.find_by(id: params[:id])
+    end
+
+    def log_in_check
+        helpers.logged_in?
     end
 end
