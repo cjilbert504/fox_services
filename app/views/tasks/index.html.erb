@@ -9,29 +9,15 @@
 
     This list was created by: <%= @list.created_by %>
 
-        <hr>
+    <hr>
 
-        <% @list.tasks.each do |t| %>
-
-            <% if t.completed == false %>
-                <li style="color:red;"><%= t.title %> - <%= link_to "View Task Details", list_task_path(t.list, t) %></li><br>
-            <% else t.completed == true %>
-                <li style="color:green;"><%= t.title %> - <%= link_to "View Task Details", list_task_path(t.list, t) %></li><br>
-            <% end %>
+    <%= render partial: "task_completed", locals: {tasks: @list.tasks} %>
                 
-        <% end %>
-
 <% else %>
 
-    <% @tasks.each do |t| %>
+    <h3>Here is a list of all tasks:</h3>
 
-            <% if t.completed == false %>
-                <li style="color:red;"><%= t.title %> - <%= link_to "View Task Details", list_task_path(t.list, t) %></li><br>
-            <% else t.completed == true %>
-                <li style="color:green;"><%= t.title %> - <%= link_to "View Task Details", list_task_path(t.list, t) %></li><br>
-            <% end %>
-                
-        <% end %>
+    <%= render partial: "task_completed", locals: {tasks: @tasks} %>
 
 <% end %>
  
