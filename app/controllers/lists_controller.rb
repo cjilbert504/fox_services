@@ -50,8 +50,5 @@ class ListsController < ApplicationController
     def find_list 
         @list = List.find_by(id: params[:id])
     end
-
-    def log_in_check
-        helpers.logged_in?
-    end
+    
 end
