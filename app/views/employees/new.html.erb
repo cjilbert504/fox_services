@@ -1,3 +1,13 @@
+<% if @employee.errors.any? %>
+  <div id="error_explanation">
+    <%= pluralize(@employee.errors.count, "error") %> prohibited this employee from being updated:<br>
+ 
+        <% @employee.errors.full_messages.each do |msg| %>
+                <%= msg %><br>
+        <% end %>
+  </div>
+<% end %>
+
 <h3>Sign Up As A New Employee Here:</h3>
 
 <%= form_for(@employee) do |f| %>
