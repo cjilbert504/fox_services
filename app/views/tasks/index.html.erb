@@ -10,16 +10,15 @@
     This list was created by: <%= @list.created_by %>
 
     <hr>
-
-    <%= render partial: "task_completed", locals: {tasks: @list.tasks} %>
                 
 <% else %>
 
     <h3>Here is a list of all tasks:</h3>
 
-    <%= render partial: "task_completed", locals: {tasks: @tasks} %>
+    <hr>
 
 <% end %>
  
+    <%= render partial: "task_completed", locals: {tasks: @tasks} %>
 
 
