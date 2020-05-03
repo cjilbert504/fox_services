@@ -1,14 +1,4 @@
-<% if @list.errors.any? %>
-
-  <div id="error_explanation">
-    <%= pluralize(@list.errors.count, "error") %> prohibited this list from being saved:
- 
-      <% @list.errors.full_messages.each do |msg| %>
-        <%= msg %><br>
-      <% end %>
-  </div>
-
-<% end %>
+<%= render partial: 'shared/errors', locals: {model: @list} %>
 
 <br>
 
