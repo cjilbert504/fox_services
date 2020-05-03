@@ -1,17 +1,3 @@
-<!-- # Owner
-* attributes
-    
-    - name
-    - email
-    - phone number
-    - password
-
-* associations
-    - has_many :lists
-    - has_many :tasks
-    - has_many :employees, through: tasks -->
-
-
 # List
 * attributes
     - name(date for name)
