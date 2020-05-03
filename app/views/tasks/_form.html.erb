@@ -1,12 +1,4 @@
-<% if @task.errors.any? %>
-  <div id="error_explanation">
-    <%= pluralize(@task.errors.count, "error") %> prohibited this task from being updated:<br>
- 
-        <% @task.errors.full_messages.each do |msg| %>
-                <%= msg %><br>
-        <% end %>
-  </div>
-<% end %>
+<%= render partial: 'shared/errors', locals: {model: @task} %>
 
 <br>
 
