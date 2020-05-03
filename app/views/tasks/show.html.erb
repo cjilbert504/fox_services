@@ -7,11 +7,7 @@
 
 <strong>Task Status: </strong>
 
-    <% if @task.completed == false %>
-        Incomplete
-    <% else %>
-        Completed
-    <% end %>
+    <%= check_task_complete %>
 
 <br>
 
@@ -19,11 +15,7 @@
 
 <br>
 
-<% if @task.employee != nil %>
-    <strong>Assigned To: </strong><%= @task.employee.name %>
-<% else %>
-    <strong style="color: red;">Task Is Not Assigned! </strong>
-<% end %>
+<strong>Assigned to: </strong><%= check_if_task_assigned %>
 
     
 <br><hr>
