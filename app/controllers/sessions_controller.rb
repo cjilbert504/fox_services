@@ -26,16 +26,6 @@ class SessionsController < ApplicationController
           redirect_to employee_path(@employee)
     end
 
-    def omni_google
-        @employee = Employee.find_or_create_by(email: auth[:info][:email]) do |e|
-            e.uid = auth['uid']
-            e.name = auth['info']['name']
-            e.password = SecureRandom.alphanumeric(10)
-        end   
-          session[:user_id] = @employee.id
-          redirect_to employee_path(@employee)
-    end
-
     def destroy
         session.delete :user_id
         redirect_to root_path

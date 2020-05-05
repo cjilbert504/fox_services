@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   get '/help', to: 'static_pages#help'
   get '/about', to: 'static_pages#about'
   get '/auth/facebook/callback', to: 'sessions#omni'
-  get '/auth/google_oauth2/callback', to: 'sessions#omni_google'
+  get '/auth/google_oauth2/callback', to: 'sessions#omni'
 
   resources :contact_messages, only: [:new, :create]
 
