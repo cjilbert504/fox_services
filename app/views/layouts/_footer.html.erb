@@ -4,6 +4,11 @@
   </small>
   <nav>
     <ul>
+      <% if is_logged_in? %>
+        <li><%= link_to "About", about_path %></li>
+        <li><%= link_to "Contact", new_contact_message_path %></li>
+        <li><%= link_to "Help", help_path %></li>
+      <% end %>
       <li><a href="https://www.facebook.com/foxservices82/?__tn__=HHH-R">Facebook</a></li>
     </ul>
   </nav>
