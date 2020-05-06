@@ -37,7 +37,7 @@ class ListsController < ApplicationController
         end
     end
 
-    def destroy 
+    def destroy
         @list.destroy
         redirect_to lists_path
     end
@@ -52,13 +52,14 @@ class ListsController < ApplicationController
         @list = List.find_by(id: params[:id])
     end
 
+    
+    def authorized
+        helpers.current_user.name == @list.created_by
+    end
+    
     def can_edit_or_delete
         find_list
-        if helpers.current_user.name == @list.created_by
-            @list
-        else
-            redirect_to lists_path, alert: "You do not have the permissions to edit this task"
-        end
+        redirect_to lists_path, alert: "You do not have the permissions to edit this task" unless !!authorized
     end
-
+    
 end

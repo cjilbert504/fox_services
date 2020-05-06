@@ -66,12 +66,14 @@ class TasksController < ApplicationController
         redirect_to lists_path, alert: "Task not found!" unless @task = Task.find_by(id: params[:id])
     end
 
+    
+    def authorized
+        helpers.current_user.name == @task.list.created_by || helpers.current_user == @task.employee
+    end
+
     def can_edit_or_complete
         find_task
-        if helpers.current_user.name == @task.list.created_by || helpers.current_user == @task.employee
-            @task
-        else
-            redirect_to list_tasks_path(@task.list), alert: "You do not have the permissions to edit this task"
-        end
+        redirect_to list_tasks_path(@task.list), alert: "You do not have the permissions to edit this task" unless !!authorized
     end
+    
 end
