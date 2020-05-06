@@ -1,4 +1,5 @@
 class ListsController < ApplicationController
+
     before_action :logged_in?
     before_action :find_list, only: :update
     before_action :can_edit_or_delete, only: [:edit, :destroy]

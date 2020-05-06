@@ -1,4 +1,5 @@
 class TasksController < ApplicationController
+
     before_action :logged_in?
     before_action :find_task, only: [:show, :update]
     before_action :can_edit_or_complete, only: [:edit, :destroy]

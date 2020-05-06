@@ -1,4 +1,5 @@
 class EmployeesController < ApplicationController
+
     before_action :logged_in?, only: [:index, :show, :edit]
 
     def index 
