@@ -6,6 +6,8 @@ class Task < ApplicationRecord
   
   validates :title, :address, :content, presence: true
 
+  scope :most_recent, -> {Task.order("created_at DESC").limit(5)}
+
   private 
 
   def normalize_title 
