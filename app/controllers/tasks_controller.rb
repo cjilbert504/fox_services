@@ -13,7 +13,8 @@ class TasksController < ApplicationController
                 redirect_to lists_path, alert: "List not found!"
             end
         else
-            @tasks = Task.order(:list_id)
+            # @tasks = Task.order(:list_id)
+            @tasks = Task.most_recent
             render layout: "list_tasks"
         end
     end
