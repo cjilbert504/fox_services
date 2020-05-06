@@ -4,6 +4,7 @@
     <nav>
       <ul class="nav navbar-nav navbar-right">
       <% if is_logged_in? %>
+        <li><%= link_to "Most Recent Tasks", tasks_path %></li>
         <li><%= link_to "My Tasks", employee_path(current_user) %></li>
         <li><%= link_to "Task Lists", lists_path %></li>
         <li><%= link_to "New Task List", new_list_path %></li>
