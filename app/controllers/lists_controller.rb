@@ -4,7 +4,7 @@ class ListsController < ApplicationController
     before_action :can_edit_or_delete, only: [:edit, :destroy]
 
     def index 
-        @list = List.all
+        @lists = List.order("name")
     end
 
     def show 
