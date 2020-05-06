@@ -1,6 +1,7 @@
 class ListsController < ApplicationController
     before_action :logged_in?
-    before_action :find_list, only: [:edit, :update, :destroy]
+    before_action :find_list, only: :update
+    before_action :can_edit_or_delete, only: [:edit, :destroy]
 
     def index 
         @list = List.all
@@ -49,6 +50,15 @@ class ListsController < ApplicationController
 
     def find_list 
         @list = List.find_by(id: params[:id])
+    end
+
+    def can_edit_or_delete
+        find_list
+        if helpers.current_user.name == @list.created_by
+            @list
+        else
+            redirect_to lists_path, alert: "You do not have the permissions to edit this task"
+        end
     end
 
 end
