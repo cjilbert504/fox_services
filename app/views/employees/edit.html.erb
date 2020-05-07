@@ -1,0 +1,9 @@
+<%= render partial: 'shared/errors', locals: {model: @employee} %>
+
+<h3>Edit Employee Information Here:</h3>
+
+<%= render 'form' %>
+
+<br>
+
+<%= link_to "Back", employee_path(current_user) %>
