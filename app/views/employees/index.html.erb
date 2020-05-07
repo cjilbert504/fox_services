@@ -1,0 +1,9 @@
+<h3>Here Is A List Of All Employees:</h3>
+
+<hr>
+
+<% @employees.each do |e| %>
+    <strong>Employee Name: </strong><%= e.name %> - <strong>Employee Email: </strong><%= e.email %>
+    <br>
+<% end %>
+
