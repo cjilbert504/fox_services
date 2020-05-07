@@ -1,3 +1,7 @@
+<%= link_to "Edit Your Info", edit_employee_path(@employee) %> | <%= link_to "Delete Your Account", employee_path(@employee), method: :delete,
+              data: { confirm: 'Are you sure?' } %>
+<br>
+
 <% if flash[:notice] %><br>
 <%= flash[:notice] %><br>
 <% end %>
