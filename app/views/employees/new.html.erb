@@ -2,28 +2,4 @@
 
 <h3>Sign Up As A New Employee Here:</h3>
 
-<%= form_for(@employee) do |f| %>
-
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-
-    <br>
-
-    <%= f.label :email %><br>
-    <%= f.email_field :email %>
-
-    <br>
-
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-
-    <br>
-
-    <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %>
-
-    <br><br>
-
-    <%= f.submit %>
-
-<% end %>
+<%= render 'form' %>
