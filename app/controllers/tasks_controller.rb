@@ -9,14 +9,13 @@ class TasksController < ApplicationController
             @list =  List.find_by(id: params[:list_id])
             if @list
                 @tasks = @list.tasks
-                render layout: "list_tasks"
             else
                 redirect_to lists_path, alert: "List not found!"
             end
         else
             @tasks = Task.most_recent
-            render layout: "list_tasks"
         end
+        render layout: "list_tasks"
     end
 
     def show
