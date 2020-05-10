@@ -29,7 +29,7 @@ task_2 = Task.create(
     employee_id: employee_2.id)
 
 task_3 = Task.create(
-    title: "Driveway Gradding",
+    title: "Driveway Grading",
     content: "Grade the dirt/sand piled up in driveway area smoothly all the way from the driveway to the curb. Make sure to clean any sand/dirt that gets into the street.",
     address: "1234 Task Three Drive",
     list_id: list_1.id,
