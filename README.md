@@ -1,24 +1,33 @@
-# README
+# Fox Services
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is a task management tool created for the use of Fox Services and its employees.
 
-Things you may want to cover:
+* Users can do the following:
 
-* Ruby version
+    - Create daily task lists for the company
 
-* System dependencies
+    - Create tasks for those lists and assign the tasks to employees
 
-* Configuration
+    - Mark tasks as completed or incomplete
 
-* Database creation
+    - Move tasks to different lists and assign tasks to different employees
 
-* Database initialization
+    - Edit list and task details or delete entirely
 
-* How to run the test suite
+---
 
-* Services (job queues, cache servers, search engines, etc.)
+# Getting Started
 
-* Deployment instructions
+* After cloning this repo you can get started using the application for experimentation by:
 
-* ...
+    - Running rails db:seed
+
+    - Starting a local server with rails s command
+
+    - Navigating to localhost:3000
+
+    - Log in with a user created from the seed file, see db/seeds.rb file for login crendentials for one of the users or"
+
+        - Create a new account by clicking on the sign up link in the nav bar
+
+        - Log in via google or facebook by clicking first on the login link in the nav bar and then clicking on the icon associated to the strategy you would like to log in with.
