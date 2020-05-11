@@ -51,7 +51,7 @@ class EmployeesController < ApplicationController
     private
 
     def find_employee
-        @employee = Employee.find_by(id: params[:id])
+        redirect_to root_path, alert: "Employee not found!" unless @employee = Employee.find_by(id: params[:id])
     end
 
     def employee_params 
