@@ -3,15 +3,12 @@ class TasksController < ApplicationController
     before_action :logged_in?
     before_action :find_task, only: [:show, :update]
     before_action :can_edit_or_complete, only: [:edit, :destroy]
+    rescue_from ActiveRecord::RecordNotFound, with: :invalid_list
 
     def index 
         if params[:list_id].present?
-            @list =  List.find_by(id: params[:list_id])
-            if @list
-                @tasks = @list.tasks
-            else
-                redirect_to lists_path, alert: "List not found!"
-            end
+            find_list
+            @tasks = @list.tasks
         else
             @tasks = Task.most_recent
         end
@@ -22,12 +19,8 @@ class TasksController < ApplicationController
     end
 
     def new 
-        list = List.find_by(id: params[:list_id])
-        if list
-            @task = list.tasks.build
-        else
-            redirect_to lists_path, alert: "List not found!"
-        end
+        find_list
+        @task = @list.tasks.build
     end
 
     def edit 
@@ -66,6 +59,10 @@ class TasksController < ApplicationController
         redirect_to lists_path, alert: "Task not found!" unless @task = Task.find_by(id: params[:id])
     end
 
+    def find_list
+        @list = List.find(params[:list_id])
+    end
+
     
     def authorized
         helpers.current_user.name == @task.list.created_by || helpers.current_user == @task.employee
@@ -74,6 +71,11 @@ class TasksController < ApplicationController
     def can_edit_or_complete
         find_task
         redirect_to list_tasks_path(@task.list), alert: "You do not have the permissions to edit this task" unless !!authorized
+    end
+
+    def invalid_list
+        logger.error "Attempt to access invalid list #{params[:list_id]}" 
+        redirect_to lists_path, alert: 'Invalid list'
     end
     
 end
