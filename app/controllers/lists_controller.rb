@@ -50,7 +50,7 @@ class ListsController < ApplicationController
     end
 
     def find_list 
-        @list = List.find_by(id: params[:id])
+        redirect_to lists_path, alert: "List not found" unless @list = List.find_by(id: params[:id])
     end
 
     
