@@ -10,7 +10,7 @@
         <% if t.employee == current_user %>
             <strong><li style="color:green;"><%= t.title %> - <%= link_to "View Task Details", list_task_path(t.list, t) %></li></strong><br>
         <% else %>
-            <li style="color:green;"><%= t.title %> - <%= link_to "View Task Details", list_task_path(t.list, t) %></li>
+            <li style="color:green;"><%= t.title %> - <%= link_to "View Task Details", list_task_path(t.list, t) %></li><br>
         <% end %>
     <% end %>
                 
