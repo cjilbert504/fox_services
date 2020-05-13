@@ -63,7 +63,6 @@ class TasksController < ApplicationController
         @list = List.find(params[:list_id])
     end
 
-    
     def authorized
         helpers.current_user.name == @task.list.created_by || helpers.current_user == @task.employee
     end
