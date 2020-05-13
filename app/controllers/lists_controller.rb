@@ -59,7 +59,7 @@ class ListsController < ApplicationController
     
     def can_edit_or_delete
         find_list
-        redirect_to lists_path, alert: "You do not have the permissions to edit this task" unless !!authorized
+        redirect_to lists_path, alert: "You do not have the permissions to edit this list" unless !!authorized
     end
     
 end
