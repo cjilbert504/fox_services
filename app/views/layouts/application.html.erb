@@ -20,9 +20,11 @@
       <div class="center jumbotron" style="opacity: 0.95;">
 
         <div style="color:red;">
-          <% if flash[:alert] %>
-            <%= flash[:alert] %>
-          <% end %>
+          <%= flash_alert %>
+        </div>
+
+        <div style="color:green;">
+          <%= flash_notice %>
         </div>
 
         <%= yield %>
