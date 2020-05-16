@@ -15,6 +15,11 @@ class TasksController < ApplicationController
         render layout: "list_tasks"
     end
 
+    def search
+        emp = Employee.find_by(name: params[:q])
+        @tasks = Task.tasks_by_employee(emp).incomplete_tasks
+    end
+
     def show
     end
 

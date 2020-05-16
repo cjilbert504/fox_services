@@ -7,3 +7,9 @@
     <br>
 <% end %>
 
+<%= form_tag("/search", method: "get") do %>
+    <%= label_tag(:q, "Search By Name:") %>
+    <%= text_field_tag(:q) %>
+    <%= submit_tag("Search") %>
+<% end  %>
+

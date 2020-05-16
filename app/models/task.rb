@@ -7,6 +7,8 @@ class Task < ApplicationRecord
   validates :title, :address, :content, presence: true
 
   scope :most_recent, -> {Task.order("created_at DESC").limit(5)}
+  scope :tasks_by_employee,  ->(name) {Task.where("employee_id == ?", name)}
+  scope :incomplete_tasks, -> {Task.where("completed == ?", false)}
 
   private 
 

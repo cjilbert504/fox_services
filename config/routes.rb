@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get '/about', to: 'static_pages#about'
   get '/auth/facebook/callback', to: 'sessions#omni'
   get '/auth/google_oauth2/callback', to: 'sessions#omni'
+  get '/search', to: 'tasks#search'
 
   resources :contact_messages, only: [:new, :create]
 
