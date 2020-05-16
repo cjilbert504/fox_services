@@ -20,9 +20,7 @@
         <div class="center jumbotron" style="opacity: 0.95; height: 500px; overflow-x: hidden; overflow-x: auto; text-align:center;">
 
           <div style="color:red;">
-            <% if flash[:alert] %>
-              <%= flash[:alert] %>
-            <% end %>
+            <%= flash_alert %>
           </div>
 
         <%= yield %>

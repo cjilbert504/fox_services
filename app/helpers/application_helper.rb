@@ -8,4 +8,16 @@ module ApplicationHelper
         !!current_user
     end
 
+    def flash_alert
+        if flash[:alert]
+            flash[:alert]
+        end
+    end
+
+    def flash_notice
+        if flash[:notice]
+            flash[:notice]
+        end
+    end
+
 end
