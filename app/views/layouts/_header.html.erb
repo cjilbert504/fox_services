@@ -11,8 +11,6 @@
         <li><%= link_to "View All Employees", employees_path %></li>
         <li><%= link_to "Log Out", session_path(:user_id), method: :delete %></li>
       <% else %>
-        <li><%= link_to "Log In", new_session_path %></li>
-        <li><%= link_to "Sign Up", new_employee_path %></li>
         <li><%= link_to "About", about_path %></li>
         <li><%= link_to "Contact", new_contact_message_path %></li>
         <li><%= link_to "Help", help_path %></li>
