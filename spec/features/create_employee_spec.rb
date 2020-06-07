@@ -3,7 +3,7 @@ require 'rails_helper'
 RSpec.describe "Creating a new employee", type: :feature do
 
     scenario 'valid inputs' do
-        visit new_employee_path
+        visit signup_path
         fill_in 'Name', with: 'Dustin'
         fill_in 'Email', with: 'dustin@example.com'
         fill_in 'Password', with: 'dustin'
